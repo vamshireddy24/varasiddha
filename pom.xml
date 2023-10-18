@@ -24,14 +24,7 @@
          </dependency>
         <!-- Add any required dependencies here -->
     </dependencies>
-<build>
-    <resources>
-        <resource>
-            <directory>src/main/webapp</directory>
-            <filtering>true</filtering>
-        </resource>
-    </resources>
-</build>
+
     <build>
         <plugins>
             <plugin>
@@ -43,6 +36,7 @@
                         <!-- Include your HTML, CSS, JavaScript, and PHP files in the WAR file -->
                         <resource>
                             <directory>src/main/webapp</directory>
+                            <filtering>true</filtering>
                         </resource>
                     </webResources>
                 </configuration>
