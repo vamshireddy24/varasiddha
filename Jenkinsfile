@@ -45,7 +45,8 @@ pipeline {
               //  TRIVY_SNAP_FILE = '/var/lib/snapd/snaps/trivy_276.snap'
              //   TRIVY_MOUNT_POINT = '/snap/trivy/276'
              //   user = 'root'
-            //}
+            args '--user root -v /var/lib/snapd/snaps/trivy_276.snap:/var/lib/snapd/snaps/trivy_276.snap'
+            }
             steps {
                 script {
                     // Run Trivy scan
