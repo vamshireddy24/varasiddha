@@ -19,7 +19,7 @@ pipeline {
         
             stage('Sonar-Test') {
                 environment {
-                    SONAR_URL = "http://34.201.116.83:9000"
+                    SONAR_URL = "http://localhost:9000"
                 }
                 steps {
                     script {
