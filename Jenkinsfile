@@ -3,7 +3,7 @@ pipeline {
     stages {
             stage('checkout') {
                 steps {
-                git url: "https://github.com/vamshireddy24/varasiddha"
+                git url: "https://github.com/vamshireddy24/varasiddha.git"
                 }
             }
             stage('Mvn-Build') {
