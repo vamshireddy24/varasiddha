@@ -37,7 +37,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.9.0</version>
+                <version>3.9.4</version>
                 <configuration>
                     <webResources>
                         <!-- Include your HTML, CSS, JavaScript, and PHP files in the WAR file -->
