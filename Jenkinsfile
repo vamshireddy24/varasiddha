@@ -18,7 +18,7 @@ pipeline {
             stage('Sonar-Test') {
                 withSonarQubeEnv('mysonar')
                 {
-                    def mavenHome = toolname: "maven", type: "maven"
+                    def mavenHome = tool "maven"
                     def mavenCMD = "${mavenHome}/bin/mvn"
                     sh "${mavenCMD} sonar:sonar"
                 }
