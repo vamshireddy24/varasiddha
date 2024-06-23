@@ -41,16 +41,17 @@ pipeline {
             }
         }
         stage('Security Scan with Trivy') {
-            environment {
-                TRIVY_SNAP_FILE = '/var/lib/snapd/snaps/trivy_276.snap'
-                TRIVY_MOUNT_POINT = '/snap/trivy/276'
-                user = 'root'
-            }
+            //environment {
+              //  TRIVY_SNAP_FILE = '/var/lib/snapd/snaps/trivy_276.snap'
+             //   TRIVY_MOUNT_POINT = '/snap/trivy/276'
+             //   user = 'root'
+            //}
             steps {
                 script {
                     // Run Trivy scan
-                    sh "sudo umount ${TRIVY_MOUNT_POINT}"
-                    def trivyOutput = sh(script: "trivy --exit-code 0 --severity HIGH --format json ${DOCKER_IMAGE}", returnStdout: true).trim()
+                    // sh "sudo umount ${TRIVY_MOUNT_POINT}"
+                    trivyOutput = sh 'trivy image ${DOCKER_IMAGE}'
+                    //def trivyOutput = sh(script: "trivy --exit-code 0 --severity HIGH --format json ${DOCKER_IMAGE}", returnStdout: true).trim()
                     echo "Trivy scan results:\n${trivyOutput}"
                 }
             }
