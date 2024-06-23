@@ -51,7 +51,7 @@ pipeline {
                 script {
                     // Run Trivy scan
                     // sh "sudo umount ${TRIVY_MOUNT_POINT}"
-                    trivyOutput = sh 'sudo docker run --rm -v /home/ubuntu/trivy/:/root/.cache/ aquasec/trivy:0.52.2 image ${DOCKER_IMAGE}'
+                    trivyOutput = sh 'sudo -s docker run --rm -v /home/ubuntu/trivy/:/root/.cache/ aquasec/trivy:0.52.2 image ${DOCKER_IMAGE}'
                     //def trivyOutput = sh(script: "trivy --exit-code 0 --severity HIGH --format json ${DOCKER_IMAGE}", returnStdout: true).trim()
                     echo "Trivy scan results:\n${trivyOutput}"
                 }
