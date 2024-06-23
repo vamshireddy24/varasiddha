@@ -18,12 +18,13 @@ pipeline {
             }
         
             stage('Sonar-Test') {
+                environment {
+                    SONAR_URL = "http://34.201.116.83:9000"
+                }
                 steps {
                     script {
-                withSonarQubeEnv('mysonar')
-                    def mavenHome = tool name: "maven", type: "maven"
-                    def mavenCMD = "${mavenHome}/bin/mvn"
-                    sh "${mavenCMD} sonar:sonar"   
+                        withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
+                          sh 'cd  mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'  
                     }
                 }
             }
