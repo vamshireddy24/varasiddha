@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: varasiddha-app
+  labels:
+    app: varasiddha-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: varasiddha-app
+  template:
+    metadata:
+      labels:
+        app: varasiddha-app
+    spec:
+      containers:
+      - name: varasiddha-app
+        image: kubevamshi/varasiddha:replaceImageTag
+        ports:
+        - containerPort: 8080
