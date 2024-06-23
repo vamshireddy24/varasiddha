@@ -13,17 +13,14 @@ pipeline {
                     sh "${mavenCMD} clean package"
                 }
             }
-        }
-    stages {
+        
             stage('Sonar-Test') {
                 steps {
                 withSonarQubeEnv('mysonar')
-                    {
                     def mavenHome = tool "maven"
                     def mavenCMD = "${mavenHome}/bin/mvn"
-                    sh "${mavenCMD} sonar:sonar"
+                    sh "${mavenCMD} sonar:sonar"   
                 }
             }
-        }
     }
 }
