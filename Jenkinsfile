@@ -28,18 +28,36 @@ pipeline {
                 }
             }
         }
-        stage('Build Docke Image') {
-                environment {
-                    DOCKER_IMAGE = "kubevamshi/varasiddha:${BUILD_NUMBER}"
-                    REGISTRY_CREDENTIALS = credentials('docker-cred')
-                    }
+        stage('Build and Push Docker Image') {
+            environment {
+                DOCKER_IMAGE = "kubevamshi/varasiddha:${BUILD_NUMBER}"
+                REGISTRY_CREDENTIALS = credentials('docker-cred')
+            }
             steps {
                 script {
                     sh 'docker build -t ${DOCKER_IMAGE} .'
-                        def dockerImage = docker.image("${DOCKER_IMAGE}")
+                    def dockerImage = docker.image("${DOCKER_IMAGE}")
+                    docker.withRegistry('https://index.docker.io/v1/', "docker-cred") {
+                        dockerImage.push()
+                    }
                 }
             }
         }
+    }
+}
+        // stage('Build Docke Image') {
+         //       environment {
+           //         DOCKER_IMAGE = "kubevamshi/varasiddha:${BUILD_NUMBER}"
+             //       REGISTRY_CREDENTIALS = credentials('docker-cred')
+               //     }
+           // steps {
+             //   script {
+               //     sh 'docker build -t ${DOCKER_IMAGE} .'
+                 //       def dockerImage = docker.image("${DOCKER_IMAGE}")
+              //  }
+            //}
+      //  }
+
         //stage('Security Scan with Trivy') {
             //environment {
               //  TRIVY_SNAP_FILE = '/var/lib/snapd/snaps/trivy_276.snap'
@@ -57,15 +75,9 @@ pipeline {
                 //}
             //}
         //}
-        stage('Push to Docker Hub') {
-            steps {
-                script {
+        //stage('Push to Docker Hub') {
+          //  steps {
+            //    script {
                     // Docker login to Docker Hub
-                    docker.withRegistry('https://index.docker.io/v1/', "docker-cred") {
-                        dockerImage.push()
-                    }
-                }
-            }
-        }
-    }
-}
+              //      docker.withRegistry('https://index.docker.io/v1/', "docker-cred") {
+                //        dockerImage.push()
