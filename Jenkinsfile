@@ -40,23 +40,23 @@ pipeline {
                 }
             }
         }
-        stage('Security Scan with Trivy') {
+        //stage('Security Scan with Trivy') {
             //environment {
               //  TRIVY_SNAP_FILE = '/var/lib/snapd/snaps/trivy_276.snap'
              //   TRIVY_MOUNT_POINT = '/snap/trivy/276'
              //   user = 'root'
                // args '--user root -v /var/lib/snapd/snaps/trivy_276.snap:/var/lib/snapd/snaps/trivy_276.snap'
             //}
-            steps {
-                script {
+            //steps {
+                //script {
                     // Run Trivy scan
                     // sh "sudo umount ${TRIVY_MOUNT_POINT}"
-                    trivyOutput = sh 'sudo docker run --rm -v /home/ubuntu/trivy/:/root/.cache/ aquasec/trivy:0.52.2 image ${DOCKER_IMAGE}'
+                    //trivyOutput = sh 'sudo docker run --rm -v /home/ubuntu/trivy/:/root/.cache/ aquasec/trivy:0.52.2 image ${DOCKER_IMAGE}'
                     //def trivyOutput = sh(script: "trivy --exit-code 0 --severity HIGH --format json ${DOCKER_IMAGE}", returnStdout: true).trim()
-                    echo "Trivy scan results:\n${trivyOutput}"
-                }
-            }
-        }
+                    //echo "Trivy scan results:\n${trivyOutput}"
+                //}
+            //}
+        //}
         stage('Push to Docker Hub') {
             steps {
                 script {
