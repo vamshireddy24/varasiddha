@@ -1,7 +1,6 @@
 pipeline {
     agent any
     stages {
-        node{
             stage('checkout') {
                 git url: "https://github.com/vamshireddy24/varasiddha"
             }
@@ -14,7 +13,7 @@ pipeline {
                 }
             }
         }
-        node {
+    stages {
             stage('Sonar-Test') {
                 withSonarQubeEnv('mysonar')
                 {
@@ -24,5 +23,4 @@ pipeline {
                 }
             }
         }
-    }
 }
