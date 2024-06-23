@@ -2,9 +2,13 @@ pipeline {
     agent any
     stages {
         node{
+            stage('checkout') {
+                git url: "https://github.com/vamshireddy24/varasiddha"
+            }
+
             stage('Mvn-Build') {
                 steps {
-                    def mavenHome = toolname: "maven", type: "maven"
+                    def mavenHome = tool name: "maven", type: "maven"
                     def mavenCMD = "${mavenHome}/bin/mvn"
                     sh "${mavenCMD} clean package"
                 }
