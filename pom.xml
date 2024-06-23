@@ -12,8 +12,8 @@
     <url>http://blogger.example.net/</url>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -37,7 +37,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.8.0</version>
                 <configuration>
                     <webResources>
                         <!-- Include your HTML, CSS, JavaScript, and PHP files in the WAR file -->
