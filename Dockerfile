@@ -20,7 +20,7 @@ FROM tomcat:10.0
 WORKDIR /usr/local/tomcat
 
 # Copy the WAR file into the Tomcat webapps directory
-COPY ./varasidha-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/
+COPY ./target/varasidha-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
