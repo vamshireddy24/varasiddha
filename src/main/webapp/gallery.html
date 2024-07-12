@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+    </header>
+
+    <section id="image-gallery">
+        <!-- Add your gallery images here -->
+        <img src="image-gallery/image1.jpg" alt="Image 1">
+        <img src="image-gallery/image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
+        <!-- Add more images as needed -->
+    </section>
+
+    <section id="file-upload">
+        <h2>Upload a File</h2>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="fileToUpload" id="fileToUpload" required>
+            <input type="submit" value="Upload">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Temple Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
