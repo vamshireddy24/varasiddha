@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: varasiddha-app-service
 spec:
-  type: LoadBlancer
+  type: LoadBalancer
   selector:
     app: varasiddha-app
   ports:
