@@ -23,7 +23,7 @@ WORKDIR /usr/local/tomcat
 COPY ./target/varasidha-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/
 
 # Make port 8080 available to the world outside this container
-EXPOSE 8080
+EXPOSE 8081
 
 # Run Tomcat server
 CMD ["catalina.sh", "run"]
