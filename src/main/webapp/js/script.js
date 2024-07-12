@@ -1,22 +1,18 @@
-// Smooth scrolling for navigation links
-document.addEventListener('DOMContentLoaded', function () {
-    const navLinks = document.querySelectorAll('nav a');
-    
-    for (const link of navLinks) {
-        link.addEventListener('click', scrollToSection);
-    }
-    
-    function scrollToSection(event) {
-        event.preventDefault();
-        
-        const targetId = event.target.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        
-        if (targetSection) {
-            window.scrollTo({
-                top: targetSection.offsetTop - 50, // Adjust this value if needed
-                behavior: 'smooth'
-            });
-        }
-    }
+// Add JavaScript for the lightbox functionality
+const galleryImages = document.querySelectorAll('.gallery-image');
+const lightbox = document.querySelector('.lightbox');
+const lightboxImage = document.createElement('img');
+
+galleryImages.forEach((image, index) => {
+    image.addEventListener('click', () => {
+        lightboxImage.src = image.src;
+        lightbox.appendChild(lightboxImage);
+        document.body.appendChild(lightbox);
+        lightbox.style.display = 'block';
+    });
+});
+
+lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImage.remove();
 });
