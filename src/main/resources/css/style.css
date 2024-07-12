@@ -102,8 +102,8 @@ footer {
 }
 
 /* Media queries for responsiveness */
-@media (max-width: 786px) {
+/*@media (max-width: 786px) {
     nav ul {
         flex-direction: column;
     }
-}
+}*/
