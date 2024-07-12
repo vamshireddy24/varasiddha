@@ -15,7 +15,7 @@ header, nav, main, footer {
 
 header {
     background-color: #feb938;
-    color: #3d413ff7;
+    color: rgba(61, 65, 63, 0.97);
     text-align: center;
     margin-bottom: -20px; /* Change the margin value as needed */
 }
