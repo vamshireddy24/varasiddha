@@ -43,29 +43,29 @@ pipeline {
                 }
             }
         }
-    }
-}
-//         stage('Update Deployment File') {
-//         environment {
-//             GIT_REPO_NAME = "varasiddha"
-//             GIT_USER_NAME = "vamshireddy24"
-//         }
-//             steps {
-//                 withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
-//                     sh '''
-//                         git config user.email "chvamshikrishna24@gmail.com"
-//                         git config user.name "vamshireddy24"
-//                         BUILD_NUMBER=${BUILD_NUMBER}
-//                         sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" argocd-kube/deployment.yml
-//                         git add argocd-kube/deployment.yml
-//                         git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-//                         git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
-//                     '''
-//                 }
-//             }
-//         }
-//     }
-// }
+    
+
+         stage('Update Deployment File') {
+         environment {
+             GIT_REPO_NAME = "varasiddha"
+             GIT_USER_NAME = "vamshireddy24"
+         }
+             steps {
+                 withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+                     sh '''
+                         git config user.email "chvamshikrishna24@gmail.com"
+                         git config user.name "vamshireddy24"
+                         BUILD_NUMBER=${BUILD_NUMBER}
+                         sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" argocd-kube/deployment.yml
+                         git add argocd-kube/deployment.yml
+                         git commit -m "Update deployment image to version ${BUILD_NUMBER}"
+                         git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
+                     '''
+                 }
+             }
+         }
+     }
+ }
         // stage('Build Docke Image') {
          //       environment {
            //         DOCKER_IMAGE = "kubevamshi/varasiddha:${BUILD_NUMBER}"
