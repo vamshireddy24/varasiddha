@@ -3,56 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <!--<title>File Upload</title>-->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
     <title>SRI VARASIDHA LINGESHWARA DEVASTHANAM 
         శ్రీ వరసిద్ధ లింగేశ్వర దేవస్థానము</title>
 </head>
 <body>
     <header>
-        <img src="header-image.jpg" id="header-image" alt="Teample header image">
+        <img src="header-image.jpg" id="header-image">
         <h1>SRI VARASIDHA LINGESHWARA DEVASTHANAM</h1>
         <h1> శ్రీ వరసిద్ధ లింగేశ్వర దేవస్థానము</h1>
     </header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-    
+    <nav>
+        <ul>
+            <li><a href="Temple.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
     <main>
         <section class="intro">
             <h2>Welcome to SRI VARASIDHA LINGESHWARA DEVASTHANAM, GOTLAMITTA</h2>
             <h2>గొట్లమిట్ట శ్రీ వరసిద్ధి లింగేశ్వర దేవస్థానానికి స్వాగతం-సుస్వాగతం</h2>
             <p>Experience spiritual serenity and tranquility in our sacred space.</p>
         </section>
-   </main>
-        <section id="home">
-        <h1>Welcome to Our Temple</h1>
-        <!-- Add content for the home section -->
-    </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <!-- Add content for the about section -->
-    </section>
+        <section id="file-upload">
+            <h2>Upload a File</h2>
+            <form action="upload.php" method="POST" enctype="multipart/form-data">
+                <input type="file" name="fileToUpload" id="fileToUpload" required>
+                <input type="submit" value="Upload">
+            </form>
+        </section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <!-- Add content for the services section -->
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <!-- Add content for the contact section -->
-    </section>
-
-    <script src="script.js"></script>
+        <section class="featured-content">
+            <h3>Featured Events</h3>
+            <ul>
+                <li>
+                    <img src="event1.jpg" alt="Event 1">
+                    <h4>Event 1 Title</h4>
+                    <p>Date: January 15, 2024</p>
+                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </li>
+                <li>
+                    <img src="event2.jpg" alt="Event 2">
+                    <h4>Event 2 Title</h4>
+                    <p>Date: February 20, 2024</p>
+                    <p>Description: Nullam fringilla metus a nisl facilisis, a posuere ex bibendum.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
     <footer>
         <p>&copy; 2023 SRI VARASIDHA LINGESHWARA DEVASTHANAM. All rights reserved.</p>
     </footer>
