@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: varasiddha-app
-        image: kubevamshi/varasiddha:replaceImageTag
+        image: kubevamshi/varasiddha:30
         ports:
         - containerPort: 8080
