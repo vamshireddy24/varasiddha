@@ -16,7 +16,6 @@ pipeline {
                     }
             }
         }
-        
         // stage('Sonar-Test') {
         //     environment {
         //         SONAR_URL = "http://localhost:9000"
