@@ -12,7 +12,6 @@
 # # This should not be changed
 # ENTRYPOINT ["java","-war","app.war"]
 
-
 # Use an official Java runtime as a parent image
 FROM tomcat:10.0
 
