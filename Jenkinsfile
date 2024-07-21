@@ -77,7 +77,6 @@ pipeline {
               //  }
             //}
       //  }
-
         //stage('Security Scan with Trivy') {
             //environment {
               //  TRIVY_SNAP_FILE = '/var/lib/snapd/snaps/trivy_276.snap'
